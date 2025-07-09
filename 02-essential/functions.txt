@@ -31,3 +31,45 @@
         console.log(errorMessage);
         throw new Error(errorMessage);
     }
+
+
+- Functions as types 
+
+    callback function must accept argument with string type and it should return undefined or null (void)
+
+    so we call the callback in the function with string argument 
+
+        function performJob(callback: (m: string) => void) {
+            callback("job done!");
+        }
+
+
+    for example this function is perfect match for the performJob function.
+
+    (m: stirng) and (msg: string) doesn't matter to match the name but the most important thing is matched type. 
+
+        const logMsg = (msg: string) => {
+            console.log(msg);
+        };
+
+    finally we call the performJob function 
+    
+        performJob(logMsg);
+
+    in object type definition 
+
+        type User = {
+            name: string;
+            age: number;
+            greet: () => string;
+        };
+
+        let user: User = {
+            name: "Begana",
+            age: 36,
+            greet() {
+                console.log("Hello, ");
+                return this.name;
+            },
+        };
+
