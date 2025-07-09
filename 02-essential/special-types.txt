@@ -1,0 +1,12 @@
+- null & undefined : special types 
+: when we want to clear variable and restore something 
+
+    let a: null | string;
+    or
+    let a: undefined | string;
+
+    a = "User";
+
+    //... clear var. a
+
+    a = null;  => without null, it will throw error
