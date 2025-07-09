@@ -5,3 +5,6 @@ if (!inputEl) {
 } // handled null
 
 console.log(inputEl.value); // type narrowing to htmlElement
+
+// instead of setting if statement, we can use optional chaining
+console.log(inputEl?.value);
