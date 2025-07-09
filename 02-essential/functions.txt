@@ -1,0 +1,33 @@
+- Function return value types 
+: between parameter and {} 
+
+    function add(a: number, b: number): number {
+        return a + b;
+    }
+
+    // invalid 
+    function add(a: number, b: number): string {
+        return a + b;
+    }
+
+    typescript automatically infer the type this case but when we use complicated function, we might need function return value type.
+
+
+- Void type
+: typescript already infer but we sometimes need it for the function 
+: void means this function doesn't retrun anything
+: you can assign undefined or null only
+
+    function log(message: string): void {
+        console.log(message);
+   }
+
+
+- Never type
+: it's used with functions that never return a value
+: or with functions that always throw an exception
+
+    function logAndThrow(errorMessage: string): never {
+        console.log(errorMessage);
+        throw new Error(errorMessage);
+    }

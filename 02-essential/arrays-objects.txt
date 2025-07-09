@@ -1,0 +1,71 @@
+- arrays 
+    let hobbies = ["Sports", "Cooking"];
+
+        hobbies.push(10); // invalid
+
+- advanced array types 
+    let users: string[]; //array of string
+    let users: (string | number)[]; // union types of array 
+
+        // all valid 
+        users = [1, "begana"];
+        users = [1, 5];
+        users = ["begana", "su"];
+
+- genetic types
+    let users: Array<string | number>;
+
+- tuples type : fixed length array 
+    let possibleResults: [number, number];
+
+    possibleResults = [1, -1]; // valid
+    possibleResults = [5, 10, 12]; // invalid 
+
+    : could be with various types as well 
+    let possibleResults: [number, string];
+
+- object type definition 
+    let user: {
+        name: string;
+        age: number | string;
+        hobbies: string[];
+        role: {
+            description: string;
+            id: number;
+        };
+    } = {
+        name: "Begana",
+        age: 36,
+        hobbies: ["Sports", "Reding"],
+        role: {
+            description: "admin",
+            id: 5,
+        },
+    };
+
+- should not null or undefined type 
+    let val: {} = "some text"; // should not undefined or null
+
+    // invalid 
+    val = null;
+    val = undefined;
+
+    // valid
+    val = false;
+    val = 0;
+    val = "";
+    val = {};
+
+    const someObj = {}; // value is an empty object
+
+- record type
+    some value must be an object(Record) but flexible type of object
+    
+    let data: Record<string, number | string>;
+    (key: string, value: number or string)
+
+    // valid
+    data = {
+        entry1: 1,
+        entry: "string",
+    };

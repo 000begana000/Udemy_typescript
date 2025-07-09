@@ -1,0 +1,29 @@
+- compile to js file
+    tsc basics.ts
+
+- run the code with node
+    node basics.js
+
+- type assignment & type notation 
+    let userName: string; ===> lowercase 
+
+- check type in vanilla js 
+    console.log(typeof userName);
+
+- type inference 
+    : will face error if we assign other types
+    let userAge = 38; ===> number
+    userAge = "Begana"; ===> error!
+
+    :this is unnecessary but only OK
+    let userAge: number = 38;
+
+- assigning types to function parameters 
+    function add(a: number, b = 5) {
+        return a + b;
+    }
+
+        add(10); // valid, second argument is optional
+        add("10"); // invalid
+        add(10, 6); // valid
+        add(10, "6"); // invalid

@@ -1,0 +1,9 @@
+- the "any" type
+    : has to be the last option since it will lost purpose of typescript 
+        
+        let age: any = 36; // can aasign any type
+        age = "37";
+
+- union types
+    let age: string | number = 36; 
+    // either string or number - we can add as many as we need
