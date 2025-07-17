@@ -1,0 +1,18 @@
+- Optional 
+    msg? means msg is optional 
+        function generateError(msg?: string) {
+            throw new Error(msg);
+        }
+
+    // both works 
+    generateError();
+    or
+    generateError('an error occured')
+
+
+    // role is Optional
+    type User = {
+        name: string;
+        age: number;
+        role?: "admin" | "guest";
+    };
