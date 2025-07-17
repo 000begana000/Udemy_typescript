@@ -1,0 +1,19 @@
+- type narrowing
+    const inputEl = document.getElementById("user-name"); // htmlElement | null
+
+    if (!inputEl) {
+        throw new Error("element not found!");
+    } // handled null
+
+    console.log(inputEl.value); // type narrowing to htmlElement after handling null
+
+
+- Not null optional chaining
+    instead of setting if statement, we can use optional chaining
+
+        console.log(inputEl?.value);
+
+
+- Type casting
+    casting the type to something
+        const inputEl = document.getElementById("user-name") as HTMLElement | null;
