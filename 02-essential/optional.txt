@@ -16,3 +16,16 @@
         age: number;
         role?: "admin" | "guest";
     };
+
+
+- Nullish coalescing 
+    if the input is falsy value (undefined, null, emptystring(''), 0) then or operator will throw false
+
+        let input = null;
+        const didProvideInput = input || false;
+
+    it checkes if input is null or undefined only, not falsy values
+
+        // in this case, it will throw input
+        let input = "";
+        const didProvideInput = input ?? false;

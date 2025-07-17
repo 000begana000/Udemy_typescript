@@ -10,3 +10,8 @@ type User = {
   age: number;
   role?: "admin" | "guest";
 };
+
+let input = "";
+const didProvideInput = input ?? false;
+// it checkes if input is null or undefined only, not falsy values
+// in this case, it will throw input
