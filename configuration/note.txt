@@ -1,0 +1,11 @@
+Typescript Configuration
+- Managing Projects with Typescript
+- Configuring Type Checking & Compilation
+
+Configure Typescript's behaviour - per project
+
+    - create tsconfig.json file 
+    (most of options doesn't matter)
+        tsc --init
+
+    
