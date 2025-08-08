@@ -2,10 +2,27 @@ Typescript Configuration
 - Managing Projects with Typescript
 - Configuring Type Checking & Compilation
 
-Configure Typescript's behaviour - per project
+41. Configure Typescript's behaviour - per project
 
     - create tsconfig.json file 
     (most of options doesn't matter)
         tsc --init
 
-    
+
+42. tsconfig options : Target & Libs
+
+    < Language and Environment >
+        
+        "target": "es2016" 
+
+            which verson of JS the Typescript code will be compiled 
+        (e.x. when the project is web based, and needed to support old browsers too => es2016)
+
+        "lib": ["DOM"]
+
+            to include some standard libraries which Typescript is aware of
+        (e.x. "DOM" library, which gives us all the HTML types, commented out : default)
+
+        "jsx": "preserve"
+
+            if we working on project that uses JSX, a React project, you can control how that JSX code should be treated when the Typescript code that contains JSX is compiled to JS code.
