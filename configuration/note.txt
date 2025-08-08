@@ -26,3 +26,74 @@ Typescript Configuration
         "jsx": "preserve"
 
             if we working on project that uses JSX, a React project, you can control how that JSX code should be treated when the Typescript code that contains JSX is compiled to JS code.
+
+
+43. Contrilling File Input & Emission
+
+    < Modules >
+
+        "module": "NodeNext"
+
+                it allows you how imports and exports work in this project 
+            (e.x. "NodeNext" support modern Node.js import and export statements.)
+            (e.x. "Preserve" in a project where the code will be bundled b a bundler like webpack or Vite)
+        
+        "rootDir": "./"
+
+                you can choose which folter will contain your source files. the Typescript compiler would look for the folder, at least if it's invoked correctly.
+            (e.x. create src > app.ts then I can choose "rootDir": "./src")
+    
+
+    < JavaScript Support >
+
+        "allowJS" true
+
+            you can mix and match Typescript and JavaScript code and combine both in the same project, if you want to, you can have Typescript files and next to that JavaScript file, which is not compiled from Typescript. you could have the combination of both files if you allow JavaScript.
+        
+        "checkJs": true 
+
+            you could turn on some basic type checking in JavaScript files as well to get at least some Typescript benefits, even if you are just using JavaScript.
+    
+    < Emit >
+
+        "sourceMap": true
+
+            when Typescript compiles the code, it also generates source maps, which can help with debugging your running application.
+
+        "outDir": "./dist"
+
+            this allows you to specify a dirctory in which your comiled files will be stored, like for example, dist.
+                (create empty dist folder in this case.)
+
+        "outFile": "./"
+
+            you could also add a out file if you wanted to bundle multiple input files into one single output file so taht you could even use the Typescript compiler as a bundler.
+                (most projects you will not do that and you'll instaed use a dedicated bundler like webpack or a built tool like Vite)
+
+        "removeComments": true 
+
+            obviously, remove comments 
+        
+        "noEmit": true 
+
+            allow you to tell Typescript to actually not output any files when it compiles the code so that it essentially checks the code but does not produce an output, if you wanted that.
+        
+        "noEmitOnerror": true 
+
+            ensures that no newe files are created and output if there is an error during compilation, because by default when you compile Typescript code, it will generate a JavaScript output file even if there is an error. 
+
+
+44. Configuring Type Checking 
+    type checking part contains a bunch of settings that allow you to control in detail how strict Typescript is and anout which kind of potential errors it will complain.
+
+    < Type Checking >
+
+        "strict": true 
+
+            the default, you turn on most of this settings, so you got a pretty strict type checker then, which actually does not allow a lot of things.
+        
+        "noImplicitAny": true
+
+            also set to true when strict true, this ensures that you're not accidentally working with some values of type any in places where you simply forgot to set a type.
+        
+        ** it is recommended for most Typescript project to set strict to true because by having a very strict type checker, you get the most benefits out of Typescript.
